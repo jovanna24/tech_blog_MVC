@@ -1,0 +1,13 @@
+{{!-- Loop over each post object in the posts array --}}
+{{#if posts.length}}
+    <ul>
+        {{#each posts as |post|}}
+            <li>
+                <h3><a href="/post/{{post.id}}">{{post.title}}</a></h3>
+                <p>Published on {{post.createdAt}}</p>
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>No blog posts yet.</p>
+{{/if}}

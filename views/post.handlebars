@@ -1,0 +1,22 @@
+<section class="post-content">
+    <p>{{{post.content}}}</p>
+</section>
+<section class="comments">
+    <h2>Comments</h2>
+    {{#each post.Comments as |comment|}}
+    <div class="comment">
+        <p>{{comment.content}}</p>
+        <p>Commented by {{comment.User.name}} on {{formatDate comment.createdAt}}</p>
+    </div>
+    {{/each}}
+    <!-- Form to leave a comment -->
+    <form class="form new-comment-form">
+        <div class="form-group">
+            <label for="comment-content">Your Comment:</label>
+            <textarea class="form-input" id="comment-content" name="comment-content"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit Comment</button>
+        </div>
+    </form>
+</section>
