@@ -9,12 +9,14 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User, 
-                    attributes: ['name'],
+                    attributes: ['id'],
                 },
                 {
                     model: Comment,
-                    include: User, 
-                    attributes: ['name'],
+                    include: {
+                        model: User,
+                        attributes: ['name'],
+                    },
                 }
             ],
         }); 
@@ -25,7 +27,8 @@ router.get('/', async (req, res) => {
             posts, 
             logged_in: req.session.logged_in
         });
-    } catch (err) {
+    } catch (err) { 
+        console.error(err);
         res.status(500).json(err);
     }
 });
@@ -36,7 +39,7 @@ router.get('/post/:id', async (req, res) => {
             include: [
                 {
                     model: User, 
-                    attributes: ['name'],
+                    attributes: ['id'],
                 },
                 {
                     model: Comment, 
@@ -55,7 +58,8 @@ router.get('/post/:id', async (req, res) => {
             ...post, 
             logged_in: req.session.logged_in
         });
-    } catch (err) {
+    } catch (err) { 
+        console.error(err);
         res.status(500).json(err);
     }
 });  
@@ -71,7 +75,7 @@ router.get('/profile', withAuth, async (req, res) => {
                     include: {
                         model: Comment, 
                         include: { 
-                            mode: User, 
+                            model: User, 
                             attributes: ['name'],
                         },
                     },
@@ -88,6 +92,7 @@ router.get('/profile', withAuth, async (req, res) => {
             logged_in: true
         }); 
     } catch (err) {
+        console.error(err);
         res.status(500).json(err);
     }
 }); 

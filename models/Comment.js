@@ -12,9 +12,9 @@ Comment.init(
             autoIncrement: true,
         }, 
         comment_text: {
-            type: DataTypes. STRING, 
-            allowNull: false, 
-        }, 
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         date_created: {
             type: DataTypes.DATE, 
             allowNull: false, 
