@@ -7,12 +7,22 @@ header, .post:not(:last-child) {
     border: none;
     padding: 0;
     cursor: pointer;
-    color: #1b89bc;
+    color: #51095f;
     text-decoration: none;
     font-size: 100%;
   }
   
   .no-button:hover {
-    color: #065b83;
+    color: #55075e;
     text-decoration: underline;
   }
+
+  .navbar-nav {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.nav-item {
+    margin-right: 0.5rem; /* Adjust the spacing as needed */
+}

@@ -8,8 +8,14 @@ router.get('/', withAuth, async (req, res) => {
       where: {
         user_id: req.session.user_id,
       },
+      include: [
+        {
+          model: User, 
+          attributes: ['name'],
+        },
+      ],
     });
-    const posts = postData.map((post) = post.get({ plain: true }));
+    const posts = postData.map((post) => post.get({ plain: true }));
     res.render('profile', {
       posts, 
       logged_in: req.session.logged_in,
