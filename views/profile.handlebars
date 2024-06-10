@@ -10,8 +10,8 @@
 
     <form class="form new-post-form">
       <div class="form-group">
-        <label for="post-name">Post name:</label>
-        <input class="form-input" type="text" id="post-name" name="post-name" />
+        <label for="post-title">Post Title:</label>
+        <input class="form-input" type="text" id="post-title" name="post-title" />
       </div>
       <div class="form-group">
         <label for="post-desc">Description:</label>
@@ -30,7 +30,10 @@
     {{#each posts as |post|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/  post/{{post.id}}">{{post.name}}</a></h4>
+        <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+      </div>
+      <div class="col-md-8">
+        <h4><a href="/comment/{{comment.id}}">{{comment.text}}</a></h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>

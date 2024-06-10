@@ -1,13 +1,15 @@
-<section class="post-content">
+<div class="post-content">
     <p>{{{post.content}}}</p>
-</section>
-<section class="comments">
+</div>
+<div class="comments">
     <h2>Comments</h2>
-    {{#each post.Comments as |comment|}}
+    {{#each post.comments as |comment|}}
     <div class="comment">
-        <p>{{comment.content}}</p>
-        <p>Commented by {{comment.User.name}} on {{formatDate comment.createdAt}}</p>
+        <p>{{comment.comment_text}}</p>
+        <p>by {{comment.user.name}} on {{format_date comment.date_created}}</p>
+        {{!-- <p>Commented by {{comments.User.name}} on {{format_date comments.createdAt}}</p> --}}
     </div>
+    <hr/>
     {{/each}}
     <!-- Form to leave a comment -->
     <form class="form new-comment-form">
@@ -19,4 +21,5 @@
             <button type="submit" class="btn btn-primary">Submit Comment</button>
         </div>
     </form>
-</section>
+</div> 
+<script src="/js/comment.js"></script>

@@ -54,8 +54,9 @@ router.get('/post/:id', async (req, res) => {
             res.status(404).json({ message: 'No posts found with this id!' });
         }
         const post = postData.get({ plain: true });
+        console.log(post);
         res.render('post', {
-            ...post, 
+            post, 
             logged_in: req.session.logged_in
         });
     } catch (err) { 
