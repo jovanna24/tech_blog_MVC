@@ -18,7 +18,7 @@
 ## Usage <a name="usage"></a>
     To use the application, open the integrated terminal and begin by running the following line in the console to create a package.json file: npm init -y. Next, the dotenv and postgres modules must be installed as described above. To initialize the database, begin by running the schema file after logging into postgres. Then the database information must be seeded by running [node seed.js] Initiate the application by running the following line: node server. 
     
-    To use the published application, visit 
+    To use the published application, visit https://tech-blog-mvc-4.onrender.com/login 
 
 ## Contribution <a name="contribution"></a>
 - Handlebars documentation: https://handlebarsjs.com/
@@ -29,7 +29,9 @@
 - BootCampSpot Tutoring Services
 
 ## Examples <a name="examples"></a> 
-    
+- ![homepage](image.png)
+- ![dashboard](image-1.png)
+- ![post_comments](image-2.png)
 
 ## License <a name="license"></a>
     N/A
