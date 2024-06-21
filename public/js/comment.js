@@ -20,4 +20,4 @@ document.querySelector(".new-comment-form").addEventListener('submit', (event)=>
             console.log("An error has occured")
         }
     })
-})
+});
